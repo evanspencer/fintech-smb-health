@@ -1,0 +1,7 @@
+smb_health:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../data/smb_health.duckdb"
+      threads: 4

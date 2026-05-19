@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: mart_company_health
+    description: "Master company health table — one row per company, all features + label."
+    columns:
+      - name: company_id
+        tests:
+          - not_null
+          - unique
+      - name: as_of_date
+        tests:
+          - not_null
+
+  - name: mart_daily_volume
+    description: "Daily transaction volume aggregated by industry and health segment."
+
+  - name: mart_payment_failures
+    description: "Transaction failure counts and amounts, sliced by reason/industry/segment/method."

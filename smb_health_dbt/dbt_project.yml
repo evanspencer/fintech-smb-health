@@ -1,0 +1,39 @@
+name: smb_health_dbt
+version: "1.0.0"
+config-version: 2
+
+profile: smb_health
+
+model-paths: ["models"]
+seed-paths: ["../data/raw"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  smb_health_dbt:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  smb_health_dbt:
+    companies:
+      +column_types:
+        signup_date: date
+        credit_limit: bigint
+    transactions:
+      +column_types:
+        txn_date: date
+        amount: double
+    payments:
+      +column_types:
+        due_date: date
+        paid_date: date
+        amount: double
+        days_late: integer
+        retry_count: integer

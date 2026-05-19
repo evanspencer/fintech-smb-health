@@ -1,0 +1,7 @@
+{
+  "model": "XGBoost",
+  "test_set_size": 200,
+  "accuracy": 0.895,
+  "macro_f1": 0.8488,
+  "auc_roc": 0.9793
+}

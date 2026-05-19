@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: int_company_payment_behavior
+    description: "Company-level payment behavior aggregations — one row per company."
+    columns:
+      - name: company_id
+        tests:
+          - not_null
+          - unique
+      - name: missed_payment_rate
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+      - name: late_payment_rate
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+
+  - name: int_company_transaction_behavior
+    description: "Company-level transaction behavior aggregations — one row per company."
+    columns:
+      - name: company_id
+        tests:
+          - not_null
+          - unique
+      - name: txn_failure_rate
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"

@@ -1,0 +1,42 @@
+# Generated data — reproduce with python3 generate/synthetic_data.py
+data/raw/*.csv
+data/smb_health.duckdb
+
+# Trained model artifacts — reproduce with python3 models/risk_model/train.py
+models/risk_model/*.pkl
+models/risk_model/feature_importance.png
+
+# dbt build outputs
+smb_health_dbt/target/
+smb_health_dbt/dbt_packages/
+smb_health_dbt/logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+.env.*
+*.env
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
