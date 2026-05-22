@@ -1,0 +1,7 @@
+dbt-core
+dbt-duckdb
+xgboost
+scikit-learn
+pandas
+duckdb
+joblib
